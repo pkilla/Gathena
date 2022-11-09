@@ -14,11 +14,13 @@ namespace Athena
 {
     class Program
     {
-        [DllImport("kernel32.dll")]
-        static extern IntPtr GetConsoleWindow();
+        // [DllImport("kernel32.dll")]
+        // static extern IntPtr GetConsoleWindow();
 
-        [DllImport("user32.dll")]
-        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        // [DllImport("user32.dll")]
+        // static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+
         /// <summary>
         /// Main loop
         /// </summary>
