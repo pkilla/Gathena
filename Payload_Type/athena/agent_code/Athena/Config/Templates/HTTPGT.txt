@@ -83,8 +83,7 @@ namespace Athena.Config
 */
 
             // get system proxy settings
-            WebProxy wp = WebRequest.GetSystemWebProxy();
-            handler.Proxy = wp;
+            handler.Proxy = WebRequest.GetSystemWebProxy();
 
 
             this.client = new HttpClient(handler);
