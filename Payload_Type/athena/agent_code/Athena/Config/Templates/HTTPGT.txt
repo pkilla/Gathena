@@ -84,7 +84,7 @@ namespace Athena.Config
 
             // get system proxy settings
             handler.Proxy = WebRequest.GetSystemWebProxy();
-
+            handler.UseDefaultCredentials = true;
 
             this.client = new HttpClient(handler);
             // this.client.UseDefaultCredentials = true;
