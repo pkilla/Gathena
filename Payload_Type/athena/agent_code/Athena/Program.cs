@@ -14,11 +14,11 @@ namespace Athena
 {
     class Program
     {
-        // [DllImport("kernel32.dll")]
-        // static extern IntPtr GetConsoleWindow();
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GetConsoleWindow();
 
-        // [DllImport("user32.dll")]
-        // static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Athena
             int missedCheckins = 0;
             bool exit = false;
 
-            ShowWindow(GetConsoleWindow(), 0);
+            // ShowWindow(GetConsoleWindow(), 0);
 
             //MythicClient controls all of the agent communications
             Globals.mc = new MythicClient();
