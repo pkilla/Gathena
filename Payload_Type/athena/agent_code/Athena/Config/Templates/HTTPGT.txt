@@ -84,11 +84,11 @@ namespace Athena.Config
 
             // get system proxy settings
             WebProxy wp = (WebProxy) WebProxy.GetDefaultProxy();
-            wp.UseDefaultCredentials = true;
             handler.Proxy = wp;
 
 
             this.client = new HttpClient(handler);
+            this.client.UseDefaultCredentials = true;
 
             if (!string.IsNullOrEmpty(this.hostHeader))
             {
